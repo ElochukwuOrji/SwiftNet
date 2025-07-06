@@ -1,0 +1,166 @@
+/* Universal Style */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Varibles */
+:root {
+    --primary: purple;
+    --accent: #8460da;
+    --background: #f8f9fa;
+    --text: #333333;
+    --heading: #003366;
+    --link: #00aaff;
+    --hover: #007b8a;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: purple;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2em;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: bold;
+}
+
+.logo {
+    color: white;
+    padding: 1em;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to top, var(--background), var(--primary));
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to  {opacity: 1;}
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 10px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.hero .cta-btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 10px 25px;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid var(--accent);
+}
+
+.hero .cta-btn:hover {
+    background-color: var(--hover);
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 250px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.footer {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    margin: 0 10px;
+    height: 40px;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card {
+        width: 300px;
+    }
+}
